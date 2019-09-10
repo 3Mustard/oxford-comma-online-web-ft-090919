@@ -1,10 +1,11 @@
 def oxford_comma(array)
   size = array.size
-  case size
-    when 1
-      array.join
-    when 2
-      array.join(" and ")
-    when 3
-      
+  if size == 1
+    array.join
+  elsif size == 2
+    array.join(" and ")
+  elsif size >= 3
+    array[-1] = "and #{array[-1]}"
+    array.join(", ")
+  end
 end
